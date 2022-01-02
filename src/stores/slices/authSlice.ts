@@ -39,5 +39,3 @@ export const authReducer = persistReducer({
 	storage: AsyncStorage,
 	whitelist: ['accessToken']
 }, authSlice.reducer)
-
-export const selectCurrentUser = (state:RootState) => state.auth.user
