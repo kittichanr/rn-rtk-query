@@ -15,7 +15,7 @@ const Home = () => {
 	const [count, setCount] = useState(1)
 	const { data } = useGetPeopleQuery(count, { skip: !count })
 
-	const [logout, { }] = useLogoutMutation()
+	const [logout] = useLogoutMutation()
 
 	const { refreshToken } = useAppSelector(state => state.authSlice)
 

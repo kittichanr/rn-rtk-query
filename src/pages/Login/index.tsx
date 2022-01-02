@@ -13,7 +13,7 @@ const Login = () => {
 	const [userName, setUserName] = useState('')
 	const [password, setPassword] = useState('')
 
-	const [login, { }] = useLoginMutation()
+	const [login] = useLoginMutation()
 
 	const onLogin = async () => {
 		try {

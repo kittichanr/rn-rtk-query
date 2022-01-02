@@ -2,6 +2,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import persistReducer from 'redux-persist/es/persistReducer'
 
+import { RootState } from '..'
+
 export interface TokenState {
 	token?: string
 	accessToken?: string
@@ -27,7 +29,7 @@ const authSlice = createSlice({
 			return initialState
 		},
 	},
-	extraReducers: builder => {}
+	extraReducers: builder => null
 })
 
 export const { setCredentials, removeCredentials } = authSlice.actions
@@ -38,4 +40,4 @@ export const authReducer = persistReducer({
 	whitelist: ['accessToken']
 }, authSlice.reducer)
 
-export const selectCurrentUser = state => state.auth.user
+export const selectCurrentUser = (state:RootState) => state.auth.user
